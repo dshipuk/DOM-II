@@ -40,3 +40,36 @@ window.addEventListener("keydown", evt => {
 })
 
 // 6
+window.addEventListener("scroll", evt => {
+    console.log("user scrolled")
+})
+
+// 7
+const header = document.querySelectorAll("header")
+
+header.forEach(ele => {
+    ele.addEventListener("dblclick", evt => {
+        console.log(evt.target)
+    })
+})
+
+// 8 
+const txt = document.querySelectorAll(".text-content")
+
+txt.forEach(ele => {
+    ele.addEventListener('copy', (evt) => {
+        const selection = document.getSelection();
+        evt.clipboardData.setData('text/plain', selection.toString().toUpperCase())
+        evt.preventDefault();
+})
+})
+
+// 9
+document.addEventListener("cut", function(event) {
+    console.info("user has cut ", event)
+})
+
+// 10
+document.addEventListener("DOMContentLoaded", (event) => {
+    console.log("dom fully loaded and parsed")
+})
